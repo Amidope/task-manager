@@ -1,0 +1,21 @@
+FROM composer
+
+RUN apk add --no-cache nodejs npm
+
+COPY --from=mlocati/php-extension-installer /usr/bin/install-php-extensions /usr/local/bin/
+
+RUN set -eux; \
+    install-php-extensions pdo_pgsql xdebug;
+
+COPY ./xdebug.ini "${PHP_INI_DIR}/conf.d"
+
+WORKDIR /app
+
+COPY . .
+
+RUN composer install --no-interaction
+
+RUN npm run build
+
+CMD ["tail", "-f", "/dev/null"]
+
