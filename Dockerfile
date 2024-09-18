@@ -5,7 +5,7 @@ RUN apk add --no-cache nodejs npm
 COPY --from=mlocati/php-extension-installer /usr/bin/install-php-extensions /usr/local/bin/
 
 RUN set -eux; \
-    install-php-extensions  pdo_pgsql;
+    install-php-extensions excimer pdo_pgsql;
 
 WORKDIR /app
 
