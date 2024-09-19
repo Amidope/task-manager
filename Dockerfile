@@ -13,8 +13,7 @@ COPY . .
 
 RUN composer install --no-interaction
 
-RUN npm ci
-RUN npm run build
+#RUN npm ci
 
 CMD ["bash", "-c", "php artisan migrate --force && php artisan serve --host=0.0.0.0 --port=8000"]
 
