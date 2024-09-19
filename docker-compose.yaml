@@ -13,8 +13,10 @@ services:
   db:
     env_file: ".env"
     image: postgres:16.4-alpine3.20
-    ports:
-      - "${DB_PORT}:${DB_PORT}"
+    environment:
+      POSTGRES_DB: ${DB_DATABASE}
+      POSTGRES_USER: ${DB_USERNAME}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
     volumes:
       - db-data:/var/lib/postgresql/data
     restart: unless-stopped
