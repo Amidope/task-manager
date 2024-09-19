@@ -14,8 +14,7 @@ WORKDIR /app
 COPY . .
 
 RUN composer install --no-interaction
+#RUN npm ci
+#RUN npm run build
 
-RUN npm run build
-
-CMD ["tail", "-f", "/dev/null"]
-
+CMD ["bash", "-c", "make start"]
