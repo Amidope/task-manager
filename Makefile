@@ -6,6 +6,8 @@ migrate:
 	php artisan migrate
 console:
 	php artisan tinker
+test:
+	php artisan test
 log:
 	tail -f storage/logs/laravel.log
 dump:
