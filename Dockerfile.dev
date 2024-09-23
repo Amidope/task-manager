@@ -20,5 +20,5 @@ RUN composer install --no-interaction
 #RUN npm ci
 #RUN npm run build
 
-#CMD ["bash", "-c", "make start"]
-CMD ["tail", "-f", "/dev/null"]
+CMD ["bash", "-c", "make start"]
+#CMD ["tail", "-f", "/dev/null"]
