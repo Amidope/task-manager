@@ -6,6 +6,8 @@ migrate:
 	php artisan migrate
 console:
 	php artisan tinker
+gen-helper:
+	php artisan ide-helper:generate
 test:
 	php artisan test
 log:
