@@ -5,6 +5,9 @@ namespace Database\Seeders;
 use App\Models\TaskStatus;
 use Illuminate\Database\Seeder;
 use Symfony\Component\Yaml\Yaml;
+use function database_path;
+use function dd;
+use function includeIfExists;
 
 class TaskStatusSeeder extends Seeder
 {
@@ -13,10 +16,10 @@ class TaskStatusSeeder extends Seeder
      */
     public function run(): void
     {
-        $filepath = database_path("task_statuses.yml");
-        $statuses = Yaml::parse(file_get_contents($filepath));
+        $statuses = include(database_path("default_task_statuses.php"));
         foreach ($statuses as $status) {
             TaskStatus::create(['name' => $status]);
         }
     }
 }
+
