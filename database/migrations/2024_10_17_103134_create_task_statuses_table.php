@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('name');
             $table->timestamp('created_at')->useCurrent();
         });
-        Artisan::call('db:seed', ['--class' => 'DatabaseSeeder']);
+//        Artisan::call('db:seed', ['--class' => 'DatabaseSeeder']);
     }
 
     /**
