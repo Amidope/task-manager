@@ -2,9 +2,8 @@
 
 return [
     'home' => [
-        'header' => 'Привет от Хекслета!',
-        'description' => 'Это простой менеджер задач на Laravel',
-        'learn_more' => 'Нажми меня'
+        'header' => 'Привет!',
+        'description' => 'Это простой менеджер задач на Laravel'
     ],
     'task_status' => [
         'index' => [
