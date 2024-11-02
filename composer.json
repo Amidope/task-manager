@@ -9,6 +9,7 @@
         "laracasts/flash": "^3.2",
         "laravel/framework": "^11.9",
         "laravel/tinker": "^2.9",
+        "mckenziearts/laravel-notify": "^2.5",
         "sentry/sentry-laravel": "^4.8"
     },
     "require-dev": {

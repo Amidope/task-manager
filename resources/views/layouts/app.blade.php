@@ -11,11 +11,13 @@
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
         <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
-
+{{--        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">--}}
+        @notifyCss
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="font-sans antialiased">
+        @include('notify::components.notify')
         <div class="min-h-screen bg-gray-100">
             @include('layouts.navigation')
 
@@ -35,5 +37,6 @@
                 {{ $slot }}
             </main>
         </div>
+        @notifyJs
     </body>
 </html>
