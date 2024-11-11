@@ -16,7 +16,7 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="font-sans antialiased">
+    <body class="font-sans antialiased ">
         @include('notify::components.notify')
         <div class="min-h-screen bg-gray-100">
             @include('layouts.navigation')
@@ -34,9 +34,12 @@
 
             <!-- Page Content -->
             <main>
-                {{ $slot }}
+                <section class="py-12">
+                    {{ $slot }}
+                </section>
             </main>
         </div>
+
         @notifyJs
     </body>
 </html>
