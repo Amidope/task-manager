@@ -5,15 +5,17 @@ namespace App\Policies;
 use App\Models\TaskStatus;
 use App\Models\User;
 use Illuminate\Auth\Access\Response;
+use Illuminate\Support\Facades\Log;
 
 class TaskStatusPolicy
 {
     /**
      * Determine whether the user can view any models.
      */
-    public function viewAny(User $user): bool
+    public function viewAny(?User $user): bool
     {
-        //
+        Log::info('asd');
+        return true;
     }
 
     /**
@@ -29,7 +31,7 @@ class TaskStatusPolicy
      */
     public function create(User $user): bool
     {
-        //
+        return true;
     }
 
     /**
