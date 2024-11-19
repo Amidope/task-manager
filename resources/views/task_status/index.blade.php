@@ -2,8 +2,13 @@
     <x-slot name="header">
         {{ __('views.task_status.index.header') }}
     </x-slot>
-    <section class="bg-white dark:bg-gray-900 ">
 
+    <div class="mb-4 sm:px-6 max-w-7xl mx-auto ">
+        <x-link-button href="{{ route('task_statuses.create') }}">
+            @lang('views.task_status.index.create_button')
+        </x-link-button>
+    </div>
+    <section class="bg-white dark:bg-gray-900 ">
         <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8 shadow-md sm:rounded-lg">
             <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                 <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
@@ -11,11 +16,11 @@
                         <th scope="col" class="ps-6 py-3">@lang('views.task_status.index.id')</th>
                         <th scope="col" class="px-6 py-3">@lang('views.task_status.index.name')</th>
                         <th scope="col" class="px-6 py-3">@lang('views.task_status.index.created_at')</th>
-                        @can('seeActions', App\Models\TaskStatus::class)
+                        @auth
                             <th scope="col" class="px-6 py-3">
                                 @lang('views.task_status.index.actions')
                             </th>
-                        @endcan
+                        @endauth
                     </tr>
                 </thead>
                 <tbody>
@@ -32,10 +37,7 @@
                             <td class="px-6 py-4">
                                 {{ $taskStatus['created_at'] }}
                             </td>
-    {{--                               class="font-medium text-blue-600 dark:text-blue-500 hover:underline"--}}
                             <td>
-                                {{--                            @can('delete', $taskStatus)--}}
-{{--                                 add ujs--}}
                                 <a
                                     data-confirm="@lang('views.task_status.index.delete_confirmation')"
                                     data-method="delete"
@@ -45,12 +47,10 @@
                                 >
                                     @lang('views.task_status.index.delete')
                                 </a>
-                                {{--                            @endcan--}}
-                                {{--                            @can('update', $taskStatus)--}}
+
                                 <a class="font-medium  text-blue-600 ps-3 dark:text-blue-500 hover:underline" href="{{ route('task_statuses.edit', $taskStatus) }}">
                                     @lang('views.task_status.index.edit')
                                 </a>
-                                {{--                        @endcan--}}
                             </td>
 
                         </tr>
