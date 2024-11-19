@@ -5,9 +5,16 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreLabelRequest;
 use App\Http\Requests\UpdateLabelRequest;
 use App\Models\Label;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
-class LabelController extends Controller
+class LabelController extends \Illuminate\Routing\Controller
 {
+    use AuthorizesRequests;
+    public function __construct()
+    {
+        $this->authorizeResource(Label::class);
+    }
+
     /**
      * Display a listing of the resource.
      */
