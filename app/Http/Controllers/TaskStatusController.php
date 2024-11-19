@@ -5,15 +5,20 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreTaskStatusRequest;
 use App\Http\Requests\UpdateTaskStatusRequest;
 use App\Models\TaskStatus;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\Log;
 use Redirect;
-use function __;
-use function compact;
-use function notify;
-use function to_route;
-use function view;
 
-class TaskStatusController extends Controller
+
+class TaskStatusController extends \Illuminate\Routing\Controller
 {
+    use AuthorizesRequests;
+    public function __construct()
+    {
+        $this->authorizeResource(TaskStatus::class);
+    }
 
     /**
      * Display a listing of the resource.
@@ -71,8 +76,9 @@ class TaskStatusController extends Controller
     {
         if ($taskStatus->delete()) {
             notify()->success(__('flashes.statuses.deleted'));
+        } else {
+            notify()->success(__('flashes.statuses.delete.error'));
         }
-        notify()->success(__('flashes.statuses.delete.error'));
         return to_route('task_statuses.index');
     }
 }
