@@ -27,7 +27,7 @@ return [
             ]
         ],
         'create' => [
-            'form_header' => 'Создать статус',
+            'form_header' => 'Статус',
             'labels' => [
                 'name' => 'Имя'
             ],
