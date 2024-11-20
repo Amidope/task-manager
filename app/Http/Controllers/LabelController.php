@@ -19,7 +19,7 @@ class LabelController extends Controller
      */
     public function index()
     {
-        //
+        $labels = Label::all();
     }
 
     /**
