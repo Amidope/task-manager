@@ -7,9 +7,8 @@ use App\Http\Requests\UpdateLabelRequest;
 use App\Models\Label;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
-class LabelController extends \Illuminate\Routing\Controller
+class LabelController extends Controller
 {
-    use AuthorizesRequests;
     public function __construct()
     {
         $this->authorizeResource(Label::class);
@@ -35,14 +34,6 @@ class LabelController extends \Illuminate\Routing\Controller
      * Store a newly created resource in storage.
      */
     public function store(StoreLabelRequest $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(Label $label)
     {
         //
     }

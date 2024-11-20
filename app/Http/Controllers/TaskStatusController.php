@@ -6,15 +6,11 @@ use App\Http\Requests\StoreTaskStatusRequest;
 use App\Http\Requests\UpdateTaskStatusRequest;
 use App\Models\TaskStatus;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Gate;
-use Illuminate\Support\Facades\Log;
 use Redirect;
 
 
-class TaskStatusController extends \Illuminate\Routing\Controller
+class TaskStatusController extends Controller
 {
-    use AuthorizesRequests;
     public function __construct()
     {
         $this->authorizeResource(TaskStatus::class);
