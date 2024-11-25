@@ -13,8 +13,16 @@ class UpdateLabelRequest extends FormRequest
      */
     public function rules(): array
     {
+        $id = $this->route('label')['id'];
         return [
-            //
+            'name' => 'required|max:255|unique:labels,name,' . $id,
+            'description' => 'max:255'
+        ];
+    }
+    public function messages(): array
+    {
+        return [
+            'name.unique' => __('validation.label.unique'),
         ];
     }
 }
