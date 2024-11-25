@@ -15,9 +15,9 @@ return new class extends Migration
         Schema::create('task_statuses', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->timestamp('created_at')->useCurrent();
+            $table->date('created_at')->default(DB::raw('CURRENT_DATE'));
         });
-//        Artisan::call('db:seed', ['--class' => 'DatabaseSeeder']);
+        Artisan::call('db:seed', ['--class' => 'DatabaseSeeder']);
     }
 
     /**
