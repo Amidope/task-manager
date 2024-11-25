@@ -14,10 +14,8 @@ class UpdateTaskStatusRequest extends FormRequest
     public function rules(): array
     {
         $id = $this->route('task_status')['id'];
-        \Log::info($id);
-
         return [
-            'name' => 'required|unique:task_statuses|max:255' . $id,
+            'name' => 'required|max:255|unique:task_statuses,name,' . $id,
         ];
     }
     public function messages(): array
