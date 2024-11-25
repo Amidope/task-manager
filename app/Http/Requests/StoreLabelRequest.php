@@ -6,13 +6,13 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class StoreLabelRequest extends FormRequest
 {
-    /**
-     * Determine if the user is authorized to make this request.
-     */
-    public function authorize(): bool
-    {
-        return false;
-    }
+//    /**
+//     * Determine if the user is authorized to make this request.
+//     */
+//    public function authorize(): bool
+//    {
+//        return false;
+//    }
 
     /**
      * Get the validation rules that apply to the request.
@@ -22,7 +22,14 @@ class StoreLabelRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name' => 'required|unique:labels|max:255',
+            'description' => 'max:255'
+        ];
+    }
+    public function messages(): array
+    {
+        return [
+            'name.unique' => __('validation.label.unique')
         ];
     }
 }
