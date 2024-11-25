@@ -23,3 +23,5 @@ clear-cache:
 	php artisan route:clear
 	php artisan config:clear
 	php artisan view:clear
+rollback:
+	php artisan migrate:rollback
