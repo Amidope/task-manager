@@ -17,7 +17,7 @@
                     <x-nav-link :href="route('task_statuses.index')" :active="request()->routeIs('task_statuses.index')">
                         @lang('layouts.app.task_statuses')
                     </x-nav-link>
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('labels.index')">
+                    <x-nav-link :href="route('labels.index')" :active="request()->routeIs('labels.index')">
                         @lang('layouts.app.labels')
                     </x-nav-link>
                 </div>
