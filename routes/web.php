@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LabelController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TaskStatusController;
 use App\Models\Label;
@@ -15,7 +16,7 @@ Route::get('/dashboard', function () {
 
 Route::resources([
     'task_statuses' => TaskStatusController::class,
-    'labels' => Label::class
+    'labels' => LabelController::class
 ]);
 
 Route::middleware('auth')->group(function () {
