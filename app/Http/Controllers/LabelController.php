@@ -21,7 +21,7 @@ class LabelController extends Controller
      */
     public function index()
     {
-        $labels = Label::all();
+        $labels = Label::all()->sort();
         return view('label.index', compact('labels'));
     }
 
