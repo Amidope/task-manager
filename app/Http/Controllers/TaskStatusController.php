@@ -21,7 +21,7 @@ class TaskStatusController extends Controller
      */
     public function index()
     {
-        $taskStatuses = TaskStatus::all();
+        $taskStatuses = TaskStatus::all()->sort();
         return view('task_status.index', compact('taskStatuses'));
     }
 
