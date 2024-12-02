@@ -17,7 +17,6 @@ return new class extends Migration
             $table->string('name');
             $table->date('created_at')->default(DB::raw('CURRENT_DATE'));
         });
-        Artisan::call('db:seed', ['--class' => 'DatabaseSeeder']);
     }
 
     /**
