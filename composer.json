@@ -12,7 +12,8 @@
         "laravel/tinker": "^2.9",
         "mckenziearts/laravel-notify": "^2.5",
         "sentry/sentry-laravel": "^4.8",
-        "spatie/laravel-html": "^3.11"
+        "spatie/laravel-html": "^3.11",
+        "spatie/laravel-query-builder": "^6.2"
     },
     "require-dev": {
         "arcanedev/log-viewer": "^11.0",
