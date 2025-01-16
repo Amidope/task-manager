@@ -21,8 +21,21 @@ class UpdateTaskRequest extends FormRequest
      */
     public function rules(): array
     {
+        $id = $this->route('task')['id'];
+
         return [
-            //
+            'name' => 'required|max:255|unique:tasks,name,' . $id,
+            'description' => 'nullable|max:255',
+            'status_id' => 'required|exists:task_statuses,id',
+            'assigned_to_id' => 'nullable|exists:users,id',
+            'labels' => 'nullable|array'
+        ];
+    }
+
+    public function messages(): array
+    {
+        return [
+            'name' => __('validation.task.unique')
         ];
     }
 }
