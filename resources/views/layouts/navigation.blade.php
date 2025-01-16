@@ -11,7 +11,7 @@
             <!-- Navigation Links -->
             <div class="flex-1 flex justify-center items-center">
                 <div class="hidden space-x-8 sm:flex">
-                    <x-nav-link :href="route('dashboard')">
+                    <x-nav-link :href="route('tasks.index')">
                         @lang('layouts.app.tasks')
                     </x-nav-link>
                     <x-nav-link :href="route('task_statuses.index')" :active="request()->routeIs('task_statuses.index')">
