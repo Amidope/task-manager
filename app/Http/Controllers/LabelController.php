@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreLabelRequest;
 use App\Http\Requests\UpdateLabelRequest;
 use App\Models\Label;
-use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Http\RedirectResponse;
 use Redirect;
 
@@ -69,10 +68,10 @@ class LabelController extends Controller
      */
     public function destroy(Label $label)
     {
-        if ($label->delete()) {
+        if ($label->tasks->isEmpty() && $label->delete()) {
             notify()->success(__('flashes.statuses.deleted'));
         } else {
-            notify()->success(__('flashes.statuses.delete.error'));
+            notify()->error(__('flashes.statuses.delete.error'));
         }
         return to_route('labels.index');
     }
