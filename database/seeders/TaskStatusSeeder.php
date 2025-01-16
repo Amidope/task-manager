@@ -14,7 +14,7 @@ class TaskStatusSeeder extends Seeder
     {
         $statuses = include(database_path("default_task_statuses.php"));
         foreach ($statuses as $status) {
-            TaskStatus::create(['name' => $status]);
+            TaskStatus::firstOrCreate(['name' => $status]);
         }
     }
 }
