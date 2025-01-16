@@ -22,7 +22,19 @@ class StoreTaskRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name' => 'required|unique:tasks|max:255',
+            'status_id' => 'required|exists:task_statuses,id',
+            'description' => 'max:255',
+            'assigned_to_id' => 'nullable|integer|exists:users,id',
+            'labels' => 'nullable|array'
+        ];
+
+    }
+
+    public function messages(): array
+    {
+        return [
+            'name' => __('validation.task.unique')
         ];
     }
 }
