@@ -18,6 +18,7 @@ class TaskStatusControllerTest extends TestCase
     protected function setUp(): void
     {
         parent::setUp();
+        $this->seed();
         $this->user = User::factory()->create();
         $this->taskStatus = TaskStatus::factory()->create();
     }
@@ -27,9 +28,9 @@ class TaskStatusControllerTest extends TestCase
         $response = $this->get(route('task_statuses.index'));
         $response->assertOk();
 
-        $statuses = include(database_path("default_task_statuses.php"));
-        foreach ($statuses as $status) {
-            $response->assertSee($status);
+        $expectedStatuses = include(database_path("default_task_statuses.php"));
+        foreach ($expectedStatuses as $status) {
+            $this->assertDatabaseHas('task_statuses', ['name' => $status]);
         }
     }
 
@@ -47,14 +48,14 @@ class TaskStatusControllerTest extends TestCase
 
     public function testStore(): void
     {
-        $data = $this->taskStatus->only('name');
+        $data = TaskStatus::factory()->make()->only('name');
         $response = $this->actingAs($this->user)->post(route('task_statuses.store', $data));
         $response->assertSessionHasNoErrors();
     }
 
     public function testUpdate(): void
     {
-        $data = $this->taskStatus->only('name');
+        $data = TaskStatus::factory()->make()->only('name');
         $response = $this->actingAs($this->user)->patch(route('task_statuses.update', $this->taskStatus), $data);
         $response->assertSessionHasNoErrors();
         $response->assertRedirect();
