@@ -27,8 +27,8 @@ class AuthenticatedSessionController extends Controller
         $request->authenticate();
 
         $request->session()->regenerate();
-
-        return redirect()->intended(route('dashboard', absolute: false));
+        notify()->success(__('flashes.auth.success'));
+        return redirect()->intended(route('home', absolute: false));
     }
 
     /**

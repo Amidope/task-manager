@@ -3,7 +3,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
             <div class="flex items-center">
-                <a href="{{ route('dashboard') }}" class="text-lg font-bold text-gray-800">
+                <a href="{{ route('home') }}" class="text-lg font-bold text-gray-800">
                     Менеджер задач
                 </a>
             </div>
