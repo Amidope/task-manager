@@ -15,9 +15,9 @@ log:
 dump:
 	composer dump-autoload
 lint:
-	composer exec --verbose phpcs -- --standard=PSR12 app
+	composer exec --verbose phpcs
 lint-fix:
-	composer exec --verbose phpcbf -- --standard=PSR12 app
+	composer exec --verbose phpcbf
 clear-cache:
 	php artisan cache:clear
 	php artisan route:clear
