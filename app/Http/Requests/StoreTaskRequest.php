@@ -28,7 +28,6 @@ class StoreTaskRequest extends FormRequest
             'assigned_to_id' => 'nullable|integer|exists:users,id',
             'labels' => 'nullable|array'
         ];
-
     }
 
     public function messages(): array

@@ -4,7 +4,9 @@ namespace Database\Seeders;
 
 use App\Models\TaskStatus;
 use Illuminate\Database\Seeder;
+
 use function database_path;
+
 class TaskStatusSeeder extends Seeder
 {
     /**
@@ -18,4 +20,3 @@ class TaskStatusSeeder extends Seeder
         }
     }
 }
-

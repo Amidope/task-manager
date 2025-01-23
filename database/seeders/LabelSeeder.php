@@ -6,8 +6,8 @@ use App\Models\Label;
 use App\Models\Task;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use function database_path;
 
+use function database_path;
 
 class LabelSeeder extends Seeder
 {

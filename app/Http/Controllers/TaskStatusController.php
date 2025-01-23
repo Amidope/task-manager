@@ -8,7 +8,6 @@ use App\Models\TaskStatus;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Redirect;
 
-
 class TaskStatusController extends Controller
 {
     public function __construct()
