@@ -1,4 +1,6 @@
-FROM composer
+FROM php:8.3-alpine3.21
+
+COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 RUN apk add --no-cache bash-completion nodejs npm
 

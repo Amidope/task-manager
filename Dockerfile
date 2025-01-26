@@ -1,11 +1,13 @@
-FROM composer
+FROM php:8.3-alpine3.21
 
-RUN apk add --no-cache nodejs npm
+COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 COPY --from=mlocati/php-extension-installer /usr/bin/install-php-extensions /usr/local/bin/
 
 RUN set -eux; \
     install-php-extensions excimer pdo_pgsql;
+
+RUN apk add --no-cache nodejs npm
 
 WORKDIR /app
 
