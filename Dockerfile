@@ -2,12 +2,12 @@ FROM php:8.3-fpm-alpine3.20
 
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
+RUN apk add --no-cache make nodejs npm
+
 COPY --from=mlocati/php-extension-installer /usr/bin/install-php-extensions /usr/local/bin/
 
 RUN set -eux; \
     install-php-extensions excimer pdo_pgsql;
-
-RUN apk add --no-cache nodejs npm
 
 WORKDIR /app
 
