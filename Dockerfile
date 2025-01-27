@@ -1,3 +1,5 @@
+# syntax=docker/dockerfile:1
+
 FROM php:8.3-fpm-alpine3.20
 
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
