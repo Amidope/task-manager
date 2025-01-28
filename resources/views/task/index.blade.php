@@ -11,7 +11,7 @@
                 {{ html()->select('filter[status_id]', $taskStatusesForFilterForm, Arr::get($filterParams, 'status_id'))->placeholder(__('views.task.index.placeholders.status_id'))->class('rounded border-gray-300') }}
                 {{ html()->select('filter[created_by_id]', $usersForFilterForm, Arr::get($filterParams, 'created_by_id'))->placeholder(__('views.task.index.placeholders.created_by_id'))->class('rounded border-gray-300') }}
                 {{ html()->select('filter[assigned_to_id]', $usersForFilterForm, Arr::get($filterParams, 'assigned_to_id'))->placeholder(__('views.task.index.placeholders.assigned_to_id'))->class('rounded border-gray-300') }}
-                {{ html()->submit(__('views.task.index.filter_button'))->class('bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ml-2') }}
+                {{ html()->submit(__('views.task.index.filter_button'))->class('bg-gray-800 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ml-2') }}
                 {{ html()->form()->close() }}
             </div>
             <!-- create button -->
