@@ -37,22 +37,23 @@
                             <td class="px-6 py-4">
                                 {{ $taskStatus['created_at'] }}
                             </td>
-                            <td>
-                                <a
-                                    data-confirm="@lang('views.task_status.index.delete_confirmation')"
-                                    data-method="delete"
-                                    class="font-medium text-red-600 dark:text-blue-500 hover:underline"
-                                    rel="nofollow"
-                                    href="{{ route('task_statuses.destroy', $taskStatus) }}"
-                                >
-                                    @lang('views.task_status.index.delete')
-                                </a>
+                            @auth
+                                <td>
+                                    <a
+                                        data-confirm="@lang('views.task_status.index.delete_confirmation')"
+                                        data-method="delete"
+                                        class="font-medium text-red-600 dark:text-blue-500 hover:underline"
+                                        rel="nofollow"
+                                        href="{{ route('task_statuses.destroy', $taskStatus) }}"
+                                    >
+                                        @lang('views.task_status.index.delete')
+                                    </a>
 
-                                <a class="font-medium  text-blue-600 ps-3 dark:text-blue-500 hover:underline" href="{{ route('task_statuses.edit', $taskStatus) }}">
-                                    @lang('views.task_status.index.edit')
-                                </a>
-                            </td>
-
+                                    <a class="font-medium  text-blue-600 ps-3 dark:text-blue-500 hover:underline" href="{{ route('task_statuses.edit', $taskStatus) }}">
+                                        @lang('views.task_status.index.edit')
+                                    </a>
+                                </td>
+                            @endauth
                         </tr>
                     @endforeach
                 </tbody>
