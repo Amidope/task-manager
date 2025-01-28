@@ -41,22 +41,23 @@
                             <td class="px-6 py-4">
                                 {{ $label['created_at']->toDateString() }}
                             </td>
-                            <td>
-                                <a
-                                    data-confirm="@lang('views.label.index.delete_confirmation')"
-                                    data-method="delete"
-                                    class="font-medium text-red-600 dark:text-blue-500 hover:underline"
-                                    rel="nofollow"
-                                    href="{{ route('labels.destroy', $label) }}"
-                                >
-                                    @lang('views.label.index.delete')
-                                </a>
+                            @auth
+                                <td>
+                                    <a
+                                        data-confirm="@lang('views.label.index.delete_confirmation')"
+                                        data-method="delete"
+                                        class="font-medium text-red-600 dark:text-blue-500 hover:underline"
+                                        rel="nofollow"
+                                        href="{{ route('labels.destroy', $label) }}"
+                                    >
+                                        @lang('views.label.index.delete')
+                                    </a>
 
-                                <a class="font-medium  text-blue-600 ps-3 dark:text-blue-500 hover:underline" href="{{ route('labels.edit', $label) }}">
-                                    @lang('views.label.index.edit')
-                                </a>
-                            </td>
-
+                                    <a class="font-medium  text-blue-600 ps-3 dark:text-blue-500 hover:underline" href="{{ route('labels.edit', $label) }}">
+                                        @lang('views.label.index.edit')
+                                    </a>
+                                </td>
+                            @endauth
                         </tr>
                     @endforeach
                 </tbody>
