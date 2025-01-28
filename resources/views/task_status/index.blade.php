@@ -3,11 +3,14 @@
         {{ __('views.task_status.index.header') }}
     </x-slot>
 
-    <div class="mb-4 sm:px-6 max-w-7xl mx-auto ">
-        <x-link-button href="{{ route('task_statuses.create') }}">
-            @lang('views.task_status.index.create_button')
-        </x-link-button>
-    </div>
+    @auth
+        <div class="mb-4 sm:px-6 max-w-7xl mx-auto ">
+            <x-link-button href="{{ route('task_statuses.create') }}">
+                @lang('views.task_status.index.create_button')
+            </x-link-button>
+        </div>
+    @endauth
+
     <section class="bg-white dark:bg-gray-900 ">
         <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8 shadow-md sm:rounded-lg">
             <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
