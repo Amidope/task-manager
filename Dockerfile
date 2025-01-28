@@ -22,7 +22,8 @@ RUN cp .env.example .env && php artisan config:cache
 RUN npm ci
 
 RUN --mount=type=secret,id=DATABASE_URL,env=DATABASE_URL \
-    --mount=type=secret,id=APP_KEY,env=APP_KEY
+    --mount=type=secret,id=APP_KEY,env=APP_KEY \
+    ls /run/secrets/
 
 CMD ["bash", "-c", "php artisan migrate --force && php artisan serve --host=0.0.0.0 --port=8000"]
 
