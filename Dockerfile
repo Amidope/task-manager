@@ -17,7 +17,7 @@ COPY . .
 
 RUN composer install --no-interaction
 
-RUN cp .env.example .env && php artisan config:cache
+RUN php artisan config:cache
 
 RUN npm ci && npm run build
 
