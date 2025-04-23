@@ -21,3 +21,8 @@ clear-cache:
 	php artisan view:clear
 rollback:
 	php artisan migrate:rollback
+setup:
+	cp -n .env.example .env || true
+	php artisan key:generate
+	php artisan migrate
+	php artisan db:seed
