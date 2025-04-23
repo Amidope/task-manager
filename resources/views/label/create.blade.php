@@ -8,14 +8,14 @@
             <div class="max-w-xl">
                 {{ html()->modelForm($label, 'POST', route('labels.store'))->class('max-w-xl')->open() }}
                 <!-- name -->
-                {{ html()->label(__('views.label.create.labels.name'), 'name')->class('block mb-2 text-lg font-medium text-gray-900 dark:text-white') }}
-                {{  html()->input('text', 'name')->required()->class('mb-4 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500/3') }}
+                {{ html()->label(__('views.label.create.labels.name'), 'name')->class('block mb-2 text-lg font-medium text-gray-900 ') }}
+                {{  html()->input('text', 'name')->required()->class('mb-4 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5      ') }}
                 @error('name')
                     <div class="text-rose-600">{{ $message }}</div>
                 @enderror
                 <!-- description -->
-                {{ html()->label(__('views.label.create.labels.description'), 'description')->class('block mb-2 text-lg font-medium text-gray-900 dark:text-white') }}
-                {{  html()->input('text', 'description')->class('mb-4 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500/3') }}
+                {{ html()->label(__('views.label.create.labels.description'), 'description')->class('block mb-2 text-lg font-medium text-gray-900 ') }}
+                {{  html()->input('text', 'description')->class('mb-4 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5      ') }}
                 @error('description')
                     <div class="text-rose-600">{{ $message }}</div>
                 @enderror

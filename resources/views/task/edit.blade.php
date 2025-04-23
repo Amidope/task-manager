@@ -8,26 +8,26 @@
             <div class="max-w-xl ">
                 {{ html()->modelForm($task, 'PATCH', route('tasks.update', $task))->class('max-w-xl')->open() }}
 
-                    {{ html()->label(__('views.task_status.edit.labels.name'), 'name')->class('block mb-2 text-lg font-medium text-gray-900 dark:text-white') }}
-                    {{ html()->input('text', 'name')->required()->class('mb-4 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500/3') }}
+                    {{ html()->label(__('views.task_status.edit.labels.name'), 'name')->class('block mb-2 text-lg font-medium text-gray-900 ') }}
+                    {{ html()->input('text', 'name')->required()->class('mb-4 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5      ') }}
                     @error('name')
                         <div class="text-rose-600">{{ $message }}</div>
                     @enderror
 
-                    {{ html()->label(__('views.task.edit.labels.description'), 'description')->class('block mb-2 text-lg font-medium text-gray-900 dark:text-white') }}
-                    {{ html()->input('text', 'description')->class('mb-4 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500/3') }}
+                    {{ html()->label(__('views.task.edit.labels.description'), 'description')->class('block mb-2 text-lg font-medium text-gray-900 ') }}
+                    {{ html()->input('text', 'description')->class('mb-4 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5      ') }}
                     @error('description')
                         <div class="text-rose-600">{{ $message }}</div>
                     @enderror
 
-                    {{ html()->label(__('views.task.edit.labels.status_id'), 'status_id')->class('block mb-2 text-lg font-medium text-gray-900 dark:text-white') }}
+                    {{ html()->label(__('views.task.edit.labels.status_id'), 'status_id')->class('block mb-2 text-lg font-medium text-gray-900 ') }}
                     {{ html()->select('status_id', $taskStatuses->pluck('name', 'id'))->class('mb-4 rounded border-gray-300 w-1/3') }}
 
-                    {{ html()->label(__('views.task.edit.labels.assigned_to_id'), 'assigned_to_id')->class('block mb-2 text-lg font-medium text-gray-900 dark:text-white') }}
+                    {{ html()->label(__('views.task.edit.labels.assigned_to_id'), 'assigned_to_id')->class('block mb-2 text-lg font-medium text-gray-900 ') }}
                     {{ html()->select('status_id', $users->pluck('name', 'id'))->class('mb-4 rounded border-gray-300 w-1/3') }}
 
 
-                    {{ html()->label(__('views.task.edit.labels.labels'), 'assigned_to_id')->class('block mb-2 text-lg font-medium text-gray-900 dark:text-white') }}
+                    {{ html()->label(__('views.task.edit.labels.labels'), 'assigned_to_id')->class('block mb-2 text-lg font-medium text-gray-900 ') }}
                     {{ html()->multiselect('labels[]', $labels->pluck('name', 'id'), $task->labels->pluck('id'))->class('mb-4 rounded border-gray-300 w-1/3 h-32') }}
 
                     <div>

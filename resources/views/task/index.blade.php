@@ -25,10 +25,10 @@
         </div>
     </div>
 
-    <section class="bg-white dark:bg-gray-900 ">
+    <section class="bg-white  ">
         <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8 shadow-md sm:rounded-lg">
-            <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <table class="w-full text-sm text-left rtl:text-right text-gray-500 ">
+                <thead class="text-xs text-gray-700 uppercase bg-gray-50  ">
                     <tr>
                         <th scope="col" class="ps-6 py-3">@lang('views.task.index.id')</th>
                         <th scope="col" class="ps-6 py-3">@lang('views.task.index.status')</th>
@@ -45,17 +45,17 @@
                 </thead>
                 <tbody>
                     @foreach($tasks as $task)
-                        <tr class="bg-white border-b dark:bg-gray-800
-                                dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
+                        <tr class="bg-white border-b
+                                 hover:bg-gray-50 "
                         >
-                            <th scope="row" class="ps-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                            <th scope="row" class="ps-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
                                 {{ $task['id'] }}
                             </th>
                             <td class="px-6 py-4">
                                 {{ $task->status->name }}
                             </td>
                             <td class="px-6 py-4">
-                                <a class="text-blue-600 dark:text-blue-500 hover:underline" href="{{ route('tasks.show', $task) }}">
+                                <a class="text-blue-600  hover:underline" href="{{ route('tasks.show', $task) }}">
                                     {{ $task->name }}
                                 </a>
                             </td>
@@ -70,14 +70,14 @@
                             </td>
                             @auth
                                 <td>
-                                    <a class="font-medium  text-blue-600 ps-3 dark:text-blue-500 hover:underline" href="{{ route('tasks.edit', $task) }}">
+                                    <a class="font-medium  text-blue-600 ps-3  hover:underline" href="{{ route('tasks.edit', $task) }}">
                                         @lang('views.task.index.edit')
                                     </a>
                                     @can('delete', $task)
                                         <a
                                             data-confirm="@lang('views.task.index.delete_confirmation')"
                                             data-method="delete"
-                                            class="ml-2 font-medium text-red-600 dark:text-blue-500 hover:underline"
+                                            class="ml-2 font-medium text-red-600  hover:underline"
                                             rel="nofollow"
                                             href="{{ route('tasks.destroy', $task) }}"
                                         >

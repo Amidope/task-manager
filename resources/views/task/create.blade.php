@@ -10,13 +10,13 @@
                 <div class="flex flex-col">
 
                     <x-styled-label text="{{ __('views.task_status.create.labels.name') }}" for="name"/>
-                    {{ html()->input('text', 'name')->required()->class('mb-4 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500/3') }}
+                    {{ html()->input('text', 'name')->required()->class('mb-4 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5      ') }}
                     @error('name')
                         <div class="text-rose-600">{{ $message }}</div>
                     @enderror
 
                     <x-styled-label text="{{ __('views.task.create.labels.description') }}" for="description"/>
-                    {{ html()->textarea('description', '')->required()->class('mb-4 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500/3') }}
+                    {{ html()->textarea('description', '')->required()->class('mb-4 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5      ') }}
 
                     {{ html()->label(__('views.task.create.labels.status_id'), 'status_id') }}
                     {{ html()->select('status_id', $taskStatuses->pluck('name', 'id'))->placeholder(null)->class('rounded border-gray-300 w-1/4') }}
