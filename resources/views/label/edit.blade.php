@@ -29,6 +29,6 @@
                 {{ html()->closeModelForm() }}
             </div>
         </div>
-
+    </div>
 
 </x-app-layout>
