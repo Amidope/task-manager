@@ -2,10 +2,6 @@ start:
 	php artisan serve --host=0.0.0.0 --port=8000
 watch:
 	npm run watch
-migrate:
-	php artisan migrate
-console:
-	php artisan tinker
 gen-helper:
 	php artisan ide-helper:generate
 test:
